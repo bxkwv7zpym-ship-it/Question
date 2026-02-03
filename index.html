@@ -2,36 +2,31 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Question</title>
     <style>
-        body { background: #1a1a1a; color: #d4af37; text-align: center; font-family: serif; padding: 40px 20px; }
+        body { background: #1a1a1a; color: #d4af37; text-align: center; font-family: serif; padding: 50px 20px; margin: 0; }
         .container { max-width: 500px; margin: auto; }
-        h1 { font-size: 2.5rem; margin-bottom: 30px; }
-        .btn { padding: 15px 30px; font-size: 1.2rem; border-radius: 10px; border: none; cursor: pointer; margin: 10px; font-weight: bold; }
-        .yes-btn { background: #d4af37; color: #1a1a1a; }
-        .no-btn { background: #555; color: #888; cursor: not-allowed; opacity: 0.6; }
+        .btn { padding: 15px 30px; font-size: 1.2rem; border-radius: 10px; border: none; margin: 10px; font-weight: bold; width: 120px; }
+        .yes-btn { background: #d4af37; color: #1a1a1a; cursor: pointer; }
+        .no-btn { background: #444; color: #777; cursor: not-allowed; opacity: 0.5; }
         #valentine-pic { display: none; margin-top: 30px; }
-        img { width: 100%; border: 3px solid #d4af37; border-radius: 10px; }
+        img { width: 100%; max-width: 400px; border: 3px solid #d4af37; border-radius: 10px; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="main-ui">
         <h1>Maram, will you be my valentine?</h1>
-        
         <button class="btn yes-btn" onclick="showLove()">Yes</button>
         <button class="btn no-btn" disabled>No</button>
-
-        <div id="valentine-pic">
-            <h1>أحبك</h1>
-            <img src="image.png.JPG">
-            <p>I knew you'd say yes!</p>
-        </div>
     </div>
-
+    <div id="valentine-pic" class="container">
+        <h1 style="font-size: 3rem;">أحبك</h1>
+        <img src="image.png.JPG">
+        <p style="color: white;">I knew you'd say yes!</p>
+    </div>
     <script>
         function showLove() {
             document.getElementById('valentine-pic').style.display = 'block';
-            window.scrollTo(0, document.body.scrollHeight);
+            document.getElementById('main-ui').style.display = 'none';
         }
     </script>
 </body>
